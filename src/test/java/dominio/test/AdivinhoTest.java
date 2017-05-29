@@ -1,5 +1,7 @@
 package dominio.test;
 
+import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -23,7 +25,7 @@ public class AdivinhoTest {
 	@Test
 	public void test() {
 		
-	
+		assertEquals(1, 1);
 	}
 
 }

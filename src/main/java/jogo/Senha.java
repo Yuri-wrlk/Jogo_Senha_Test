@@ -129,4 +129,19 @@ public class Senha {
 		return ehValida;
 	}
 
+	@Override
+	public boolean equals(Object obj){
+		Boolean ehIgual = true;
+		if(obj instanceof Senha)
+			for(int i = 0; i < 4; ++i)
+				try {
+					if (this.getPino(i) != ((Senha)obj).getPino(i))
+						ehIgual = false;
+				} catch (PosicaoInvalidaException e) {
+					e.printStackTrace();
+				}
+		else
+			return false;
+		return ehIgual;
+	}
 }

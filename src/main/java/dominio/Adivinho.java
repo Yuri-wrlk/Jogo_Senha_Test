@@ -22,16 +22,10 @@ public class Adivinho implements Jogador {
 	 * pelo adivinho) e um retorno(um feedback fornecido pelo fornecedor da
 	 * senha) com base na adivinhação feita pelo adivinho
 	 */
-	
 	Jogada jogadaTurno;
-	private Scanner scanIn;
-	
+
 	public Adivinho() {
 
-	}
-	
-	public Adivinho(Scanner scanIn){
-		this.scanIn = scanIn;
 	}
 
 	/**
@@ -42,14 +36,6 @@ public class Adivinho implements Jogador {
 	public void setJogada(Jogada jog) {
 		jogadaTurno = jog;
 
-	}
-
-	public Scanner getScanIn() {
-		return scanIn;
-	}
-
-	public void setScanIn(Scanner scanIn) {
-		this.scanIn = scanIn;
 	}
 
 	/**
@@ -101,7 +87,7 @@ public class Adivinho implements Jogador {
 	public void adicionarNovoPinoATentativa(Tentativa tentativa) {
 		System.out.println("digite um novo pino para sua tentativa. ");
 		System.out.println("Ele pode ser vermelho, azul, rosa, amarelo, roxo, verde, cinza ou laranja.");
-//		Scanner scanIn = new Scanner(System.in);
+		Scanner scanIn = new Scanner(System.in);
 		String corPino = scanIn.nextLine();
 		int posicaoDoNovoPino = tentativa.quantosPinosJaForamAdicionados();
 		try {
@@ -113,9 +99,6 @@ public class Adivinho implements Jogador {
 			System.out.println(
 					"cor inválida para novo pino a ser inserido na tentativa do jogador." + "Tente novamente.");
 		}
-		scanIn.close();
 	}
-	
-	
 
 }

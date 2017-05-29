@@ -129,7 +129,7 @@ public class Senha {
 		return ehValida;
 	}
 
-	@Override
+	@Override // Refatoração
 	public boolean equals(Object obj){
 		Boolean ehIgual = true;
 		if(obj instanceof Senha)

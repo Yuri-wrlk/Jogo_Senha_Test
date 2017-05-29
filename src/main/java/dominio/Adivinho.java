@@ -99,6 +99,7 @@ public class Adivinho implements Jogador {
 			System.out.println(
 					"cor inválida para novo pino a ser inserido na tentativa do jogador." + "Tente novamente.");
 		}
+		scanIn.close();
 	}
 
 }

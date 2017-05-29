@@ -95,6 +95,8 @@ public class Tentativa {
 	 * @return
 	 */
 	public boolean CorEhValida(String c1) {
+		if(c1 == null) // Refatoração
+			return false;
 		if ((c1.compareTo("vermelho") == 0) || (c1.compareTo("azul") == 0) || (c1.compareTo("rosa") == 0)
 				|| (c1.compareTo("amarelo") == 0) || (c1.compareTo("roxo") == 0) || (c1.compareTo("verde") == 0)
 				|| (c1.compareTo("cinza") == 0) || (c1.compareTo("laranja") == 0)) {
@@ -123,6 +125,22 @@ public class Tentativa {
 		}
 
 		return pinosAdicionados;
+	}
+	
+	@Override // Refatoração
+	public boolean equals(Object obj){
+		Boolean ehIgual = true;
+		if(obj instanceof Tentativa)
+			for(int i = 0; i < 4; ++i)
+				try {
+					if (this.getPino(i) != ((Tentativa)obj).getPino(i))
+						ehIgual = false;
+				} catch (PosicaoInvalidaException e) {
+					e.printStackTrace();
+				}
+		else
+			return false;
+		return ehIgual;
 	}
 
 }

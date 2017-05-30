@@ -74,5 +74,19 @@ public class Retorno {
 	public int getPinosInseridos() {
 		return pinosInseridos;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean isEqual = true;
+		for(int i = 0; i < 4; ++i){
+			try {
+				if(this.getPino(i) != ((Retorno)obj).getPino(i))
+					return false;
+			} catch (PosicaoInvalidaException e) {
+				e.printStackTrace();
+			}
+		}
+		return isEqual;
+	}
 
 }

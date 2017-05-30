@@ -22,14 +22,9 @@ public class RetornoTest {
 	public void setup() {
 		this.retornoTest = new Retorno();
 		listaCores = new ArrayList<String>();
-		listaCores.add("vermelho");
-		listaCores.add("azul");
-		listaCores.add("rosa");
-		listaCores.add("amarelo");
-		listaCores.add("roxo");
-		listaCores.add("verde");
-		listaCores.add("cinza");
-		listaCores.add("laranja");
+		listaCores.add("branco");
+		listaCores.add("preto");
+		listaCores.add("nenhum");
 	}
 
 	/*
@@ -45,17 +40,17 @@ public class RetornoTest {
 
 	@Test
 	public void adicionarPinoHappy() throws CorInvalidaException {
-		int randomIndex;
-		for (int i = 0; i < 4; ++i) {
-			// Achar um indice aleatorio dentro da lista de cores
-			randomIndex = ThreadLocalRandom.current().nextInt(0, listaCores.size());
-
+		int randomPreto = ThreadLocalRandom.current().nextInt(0, 3);
+		int randomBranco = ThreadLocalRandom.current().nextInt(0, 4 - randomPreto);
+		for (int i = 0; i < randomPreto; ++i) {
 			// Tenta inserir uma das cores da lista
-			retornoTest.adicionarPino(listaCores.get(randomIndex));
-
-			// Remove a cor da lista
-			listaCores.remove(randomIndex);
+			retornoTest.adicionarPino("preto");
 		}
+		for (int i = 0; i < randomBranco; ++i) {
+			// Tenta inserir uma das cores da lista
+			retornoTest.adicionarPino("branco");
+		}
+		
 	}
 
 	@Test

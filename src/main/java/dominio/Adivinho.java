@@ -93,6 +93,7 @@ public class Adivinho implements Jogador {
 		try {
 			tentativa.adicionarPino(posicaoDoNovoPino, corPino);
 			System.out.println("pino colocado com sucesso:" + corPino);
+			System.out.println("Posição " + posicaoDoNovoPino);
 		} catch (PosicaoInvalidaException e) {
 			System.out.println("posicao para inserir pino na jogada do jogador é inválida");
 		} catch (CorInvalidaException e) {

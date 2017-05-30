@@ -40,8 +40,8 @@ public class RetornoTest {
 
 	@Test
 	public void adicionarPinoHappy() throws CorInvalidaException {
-		int randomPreto = ThreadLocalRandom.current().nextInt(0, 3);
-		int randomBranco = ThreadLocalRandom.current().nextInt(0, 4 - randomPreto);
+		int randomPreto = ThreadLocalRandom.current().nextInt(1, 3);
+		int randomBranco = ThreadLocalRandom.current().nextInt(1, 4 - randomPreto);
 		for (int i = 0; i < randomPreto; ++i) {
 			// Tenta inserir uma das cores da lista
 			retornoTest.adicionarPino("preto");
